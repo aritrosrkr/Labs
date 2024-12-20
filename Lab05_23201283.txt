@@ -1,0 +1,95 @@
+# TASK - 1
+def convert_mirror(root):
+  if root == None:
+    return
+  root.left, root.right = root.right, root.left
+  convert_mirror(root.left)
+  convert_mirror(root.right)
+  return root
+
+
+
+# TASK - 2
+def smallest_level(root, level = {}, i = 0):
+  if root.left is None or root.right is None:
+    return
+  if i == 0:
+    level[0] = root.elem
+  if root.left.elem < root.right.elem:
+    level[i+1] = root.left.elem
+  else:
+    level[i+1] = root.right.elem
+  smallest_level(root.left, level, i = i+1)
+  smallest_level(root.right, level, i = i+1)
+  return level
+
+
+
+# TASK - 3
+def sumTree(root):
+  if root == None:
+    return 0
+  i = level(root1, root.elem)
+  sum = sumTree(root.left) + sumTree(root.right)
+  if i == 0:
+    sum += root.elem
+  else:
+    sum += root.elem % i
+  return sum
+
+def level(root, val, i = 0):
+  if root is None:
+    return
+  L = level(root.left, val, i+1)
+  R = level(root.right, val, i+1)
+  if type(L) is tuple:
+    if i == 0:
+      return L[1]
+    return L
+  elif type(R) is tuple:
+    if i == 0:
+      return R[1]
+    return R
+  if root.elem == val:
+    if i == 0:
+      return i
+    return (True, i)
+
+
+
+# TASK - 4
+def swap_child(root, level, M):
+  if root is None:
+    return
+  if level == M:
+    return
+  root.left, root.right = root.right, root.left
+  swap_child(root.left, level+1, M)
+  swap_child(root.right, level+1, M)
+  return root
+
+
+
+# TASK - 5
+def subtract_summation(root):
+  if root is None:
+    return 0
+  sum = summation(root.left) - summation(root.right)
+  return sum
+
+def summation(root):
+  if root is None:
+    return 0
+  sum = summation(root.left) + summation(root.right)
+  sum += root.elem
+  return sum
+
+
+
+# TASK - 6
+def level_sum(root):
+  if root is None:
+    return 0
+  sum =  - level_sum(root.right) - level_sum(root.left)
+  sum += - root.elem
+  return sum
