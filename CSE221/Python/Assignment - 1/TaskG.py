@@ -12,20 +12,6 @@ for train in trains:
     names += [train[0]]
     times += [train[-1]]
 
-# for i in range(N-1):
-#     ind = i
-#     for j in range(i+1, N):
-#         if i != j:
-#             if names[ind] > names[j]:
-#                 ind = j
-#             elif names[ind] == names[j]:
-#                 if times[ind] < times[j]:
-#                     ind = j
-#     if ind != i:
-#         trains[ind], trains[i] = trains[i], trains[ind]
-#         names[ind], names[i] = names[i], names[ind]
-#         times[ind], times[i] = times[i], times[ind]
-
 for i in range(1, N):
     train = trains[i]
     name = names[i]
