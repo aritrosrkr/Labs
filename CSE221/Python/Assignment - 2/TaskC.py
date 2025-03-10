@@ -1,4 +1,4 @@
-N, K = tuple(map(int, input().split()))
+N, K = map(int, input().split())
 arr = list(map(int, input().split()))
 i = 0
 j = 0
