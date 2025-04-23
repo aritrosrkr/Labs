@@ -44,3 +44,38 @@ else:
     path = p1 + p2[1:]
     print(len(path)-1)
     print(*path)
+
+######## ALTERNATIVE ########
+from collections import deque
+
+N, M, S, D = map(int, input().split())
+n1 = list(map(int, input().split()))
+n2 = list(map(int, input().split()))
+
+graph = {k:[] for k in range(1, N+1)}
+parent = {k:None for k in graph}
+for i in range(M):
+    graph[n1[i]].append(n2[i])
+    graph[n2[i]].append(n1[i])
+
+def shortest_path(G, s, d):
+    visited = {k:False for k in G}
+    visited[s] = True
+    Q = deque([[s]])
+    while Q:
+        path = Q.popleft()
+        u = path[-1]
+        if u == d:
+            print(len(path)-1)
+            print(*path)
+            return
+        for v in sorted(G[u]):
+            if not visited[v]:
+                visited[v] = True
+                new_path = list(path)
+                new_path.append(v)
+                Q.append(new_path)
+        visited[u] = True
+    print(-1)
+
+shortest_path(graph, S, D)
