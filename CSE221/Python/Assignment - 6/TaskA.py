@@ -13,15 +13,15 @@ def kahn_sort(G):
     Q = []
     for v in G:
         if in_degree[v] == 0:
-            heapq.heappush(Q, -v)
+            heapq.heappush(Q, v)
 
     while Q:
-        u = -heapq.heappop(Q)
+        u = heapq.heappop(Q)
         ans.append(u)
         for v in G[u]:
             in_degree[v] -= 1
             if in_degree[v] == 0:
-                heapq.heappush(Q, -v)
+                heapq.heappush(Q, v)
     
     if len(ans) == N:
         print(*ans)
