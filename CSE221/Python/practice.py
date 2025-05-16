@@ -1,29 +1,12 @@
-t = int(input())
-for _ in range(t):
-    n, k = map(int, input().split())
-    a = list(map(int, input().split()))
-    b = list(map(int, input().split()))
-    x = []
-    c = 1
-    if all(x != -1 for x in b):
-        for i in range(n):
-            if b[i] != -1:
-                if x <= k:
-                    x = a[i] + b[i]
-                    break
-        for i in range(n):
-            if b[i] == -1:
-                b[i] = x - a[i]
-        for i in range(n):
-            if a[i] + b[i] != x:
-                c = 0
-                break
+N, R = map(int, input().split())
+graph = {k:[] for k in range(1, N+1)}
+for _ in range(N-1):
+    u, v = map(int, input().split())
+    graph[u].append(v)
+    graph[v].append(u)
 
-    else:
-        for i in range(n):
-            x = a[i] + b[i]
-            if a[i] <= x <= a[i] + k:
-                c += 1
-    
-    print(c)
-            
+Q = int(input())
+size = {k:0 for k in graph}
+parent = {k:None for k in graph}
+traversal = []
+

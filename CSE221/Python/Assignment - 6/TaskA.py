@@ -7,7 +7,7 @@ for _ in range(M):
     u, v = map(int, input().split())
     graph[u].append(v)
     in_degree[v] += 1
-    
+
 def kahn_sort(G):
     ans = []
     Q = []
