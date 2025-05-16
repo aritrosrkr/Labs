@@ -7,7 +7,6 @@ for _ in range(N-1):
 
 Q = int(input())
 size = {k:0 for k in graph}
-parent = {k:None for k in graph}
 traversal = []
 
 def dfs(G, s):
@@ -31,8 +30,7 @@ def subtree_length(u):
     for u in traversal:
         size[u] = 1
         for v in graph[u]:
-            if v != parent[u]:
-                size[u] += size[v]
+            size[u] += size[v]
 
 subtree_length(R)
 for _ in range(Q):
