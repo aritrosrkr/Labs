@@ -1,0 +1,53 @@
+﻿CSE422 Lab Project Guideline
+
+
+1. Introduction:
+A small introduction to the project and its aim. Describe the problem the project is aiming to solve and the motivation behind the project.
+
+2. Dataset Description:
+   * Dataset Description
+   * Number of features
+   * Number of data points
+   * Types of features are in your dataset
+
+
+   3. Data Analysis:
+   * Perform exploratory data analysis to extract some important relationships from the data.
+   * [Reference: EDA Lab CSE422]
+
+
+   4. Dataset Pre-processing:
+   * Handling null and duplicate values
+   * Encoding categorical values
+   * Feature Selection
+   * Feature scaling
+   * Other feature engineering, if necessary
+
+Note: Discuss one problem, and then write about the solutions or pre-processing techniques you have applied to solve that problem.
+
+
+      5. Model Training:
+      * You have to apply a Neural Network and at least 2 other models such as KNN, Decision Tree, Logistic Regression, Gaussian Discriminant Analysis, Naive Bayes etc.
+      * Treat the problem as an unsupervised learning problem and apply k-means clustering.
+
+
+      6. Model Evaluation:
+      * Bar chart showcasing prediction accuracy and f1 score of all models
+      * Confusion Matrix
+      * Performance metrics comparison of each model
+      * AUC score, ROC curve
+
+
+
+         7. Conclusion
+         * Best model based on the model evaluation
+         * Probable reasons behind getting such results
+
+
+
+
+Report Template:
+         * Overleaf: https://www.overleaf.com/latex/templates/labreport-ieee-journal-paper-template/ypbfnkbvsyhw
+
+
+         * Docs: https://www.ieee.org/content/dam/ieee-org/ieee/web/org/conferences/Conference-template-A4.doc
